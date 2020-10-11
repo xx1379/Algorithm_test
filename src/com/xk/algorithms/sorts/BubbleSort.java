@@ -15,7 +15,7 @@ public class BubbleSort {
         System.out.println(Arrays.toString(arr));
     }
 
-    public static <T extends Comparable<T>> T[] sort(T[] unsorted) {
+    public static <T extends Comparable<T>> void sort(T[] unsorted) {
         int length = unsorted.length;
         boolean swapFlag = true;
         while (swapFlag) {
@@ -28,6 +28,5 @@ public class BubbleSort {
             }
             length--;
         }
-        return unsorted;
     }
 }
