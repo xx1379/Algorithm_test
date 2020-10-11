@@ -15,13 +15,4 @@ public class SortUtil {
     public static <T extends Comparable<T>> boolean less(T value1, T value2) {
         return value1.compareTo(value2) < 0;
     }
-
-    public static <T extends Comparable<T>> boolean isSorted(T[] sorted) {
-        for (int i = 1; i < sorted.length; i++) {
-            if (less(i, i - 1)) {
-                return false;
-            }
-        }
-        return true;
-    }
 }
