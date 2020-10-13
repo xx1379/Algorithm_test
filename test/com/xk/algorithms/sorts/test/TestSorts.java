@@ -1,10 +1,7 @@
 package com.xk.algorithms.sorts.test;
 
 
-import com.xk.algorithms.sorts.BubbleSort;
-import com.xk.algorithms.sorts.InsertionSort;
-import com.xk.algorithms.sorts.SelectionSort;
-import com.xk.algorithms.sorts.ShellSort;
+import com.xk.algorithms.sorts.*;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
@@ -118,5 +115,35 @@ public class TestSorts {
         Integer[] reverseArr = reverse.clone();
         ShellSort.sort(reverseArr);
         assertMethod("ShellSort", reverseArr);
+    }
+
+    @Test
+    public void TestMergeSort_recursion_space() {
+        Integer[] unsortedArr = unsorted.clone();
+        MergeSort.sort(unsortedArr, MergeSort.SPACE_TYPE.NOT_IN_PLACE, MergeSort.SORT_TYPE.RECURSION);
+        assertMethod("MergeSort", unsortedArr);
+
+        Integer[] sortedArr = sorted.clone();
+        MergeSort.sort(sortedArr, MergeSort.SPACE_TYPE.NOT_IN_PLACE, MergeSort.SORT_TYPE.RECURSION);
+        assertMethod("MergeSort", sortedArr);
+
+        Integer[] reverseArr = reverse.clone();
+        MergeSort.sort(reverseArr, MergeSort.SPACE_TYPE.NOT_IN_PLACE, MergeSort.SORT_TYPE.RECURSION);
+        assertMethod("MergeSort", reverseArr);
+    }
+
+    @Test
+    public void TestMergeSort_iteration_space() {
+        Integer[] unsortedArr = sorted.clone();
+        MergeSort.sort(unsortedArr, MergeSort.SPACE_TYPE.NOT_IN_PLACE, MergeSort.SORT_TYPE.INTERATION);
+        assertMethod("MergeSort", unsortedArr);
+
+        Integer[] sortedArr = sorted.clone();
+        MergeSort.sort(sortedArr, MergeSort.SPACE_TYPE.NOT_IN_PLACE, MergeSort.SORT_TYPE.INTERATION);
+        assertMethod("MergeSort", sortedArr);
+
+        Integer[] reverseArr = reverse.clone();
+        MergeSort.sort(reverseArr, MergeSort.SPACE_TYPE.NOT_IN_PLACE, MergeSort.SORT_TYPE.INTERATION);
+        assertMethod("MergeSort", reverseArr);
     }
 }
