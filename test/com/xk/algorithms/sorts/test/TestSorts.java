@@ -146,4 +146,34 @@ public class TestSorts {
         MergeSort.sort(reverseArr, MergeSort.SPACE_TYPE.NOT_IN_PLACE, MergeSort.SORT_TYPE.INTERATION);
         assertMethod("MergeSort", reverseArr);
     }
+
+    @Test
+    public void TestMergeSort_recursion_in_space() {
+        Integer[] unsortedArr = unsorted.clone();
+        MergeSort.sort(unsortedArr, MergeSort.SPACE_TYPE.IN_PLACE, MergeSort.SORT_TYPE.RECURSION);
+        assertMethod("MergeSort", unsortedArr);
+
+        Integer[] sortedArr = sorted.clone();
+        MergeSort.sort(sortedArr, MergeSort.SPACE_TYPE.IN_PLACE, MergeSort.SORT_TYPE.RECURSION);
+        assertMethod("MergeSort", sortedArr);
+
+        Integer[] reverseArr = reverse.clone();
+        MergeSort.sort(reverseArr, MergeSort.SPACE_TYPE.IN_PLACE, MergeSort.SORT_TYPE.RECURSION);
+        assertMethod("MergeSort", reverseArr);
+    }
+
+    @Test
+    public void TestMergeSort_iteration_in_space() {
+        Integer[] unsortedArr = sorted.clone();
+        MergeSort.sort(unsortedArr, MergeSort.SPACE_TYPE.IN_PLACE, MergeSort.SORT_TYPE.INTERATION);
+        assertMethod("MergeSort", unsortedArr);
+
+        Integer[] sortedArr = sorted.clone();
+        MergeSort.sort(sortedArr, MergeSort.SPACE_TYPE.IN_PLACE, MergeSort.SORT_TYPE.INTERATION);
+        assertMethod("MergeSort", sortedArr);
+
+        Integer[] reverseArr = reverse.clone();
+        MergeSort.sort(reverseArr, MergeSort.SPACE_TYPE.IN_PLACE, MergeSort.SORT_TYPE.INTERATION);
+        assertMethod("MergeSort", reverseArr);
+    }
 }

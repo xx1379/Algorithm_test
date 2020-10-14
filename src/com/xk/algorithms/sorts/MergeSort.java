@@ -63,7 +63,32 @@ public class MergeSort {
     }
 
     public static <T extends Comparable<T>> void mergeInPlace(T[] unsorted, T[] temp, int aStart, int aEnd, int bEnd) {
+        int index1 = aStart;
+        int index2 = aEnd + 1;
+        while (index1 < index2 && index2 <= bEnd) {
+            while (index1 < index2 && unsorted[index1].compareTo(unsorted[index2]) <= 0) {
+                index1++;
+            }
+            int mid = index2 - 1;
+            while (index2 <= bEnd && unsorted[index1].compareTo(unsorted[index2]) > 0) {
+                index2++;
+            }
+            swapBlock(unsorted, index1, mid, index2 - 1);
+            index1 += (index2 - 1 - mid);
+        }
+    }
 
+    public static <T extends Comparable<T>> void swapBlock(T[] unsorted, int index1, int mid, int index2) {
+        reverse(unsorted, index1, mid);
+        reverse(unsorted, mid + 1, index2);
+        reverse(unsorted, index1, index2);
+
+    }
+
+    public static <T extends Comparable<T>> void reverse(T[] unsorted, int left, int right) {
+        while (left < right) {
+            SortUtil.swap(unsorted, left++, right--);
+        }
     }
 
     public static <T extends Comparable<T>> void mergeWithExtraSpace(T[] unsorted, T[] temp, int aStart, int aEnd, int bEnd) {
