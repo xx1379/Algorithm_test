@@ -176,4 +176,19 @@ public class TestSorts {
         MergeSort.sort(reverseArr, MergeSort.SPACE_TYPE.IN_PLACE, MergeSort.SORT_TYPE.INTERATION);
         assertMethod("MergeSort", reverseArr);
     }
+
+    @Test
+    public void QuickSort() {
+        Integer[] unsortedArr = sorted.clone();
+        QuickSort.sort(unsortedArr);
+        assertMethod("QuickSort", unsortedArr);
+
+        Integer[] sortedArr = sorted.clone();
+        QuickSort.sort(sortedArr);
+        assertMethod("QuickSort", sortedArr);
+
+        Integer[] reverseArr = reverse.clone();
+        QuickSort.sort(reverseArr);
+        assertMethod("QuickSort", reverseArr);
+    }
 }
