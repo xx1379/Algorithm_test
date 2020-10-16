@@ -191,4 +191,19 @@ public class TestSorts {
         QuickSort.sort(reverseArr);
         assertMethod("QuickSort", reverseArr);
     }
+
+    @Test
+    public void Quick3way_Sort() {
+        Integer[] unsortedArr = sorted.clone();
+        QuickSort.sort3way(unsortedArr);
+        assertMethod("QuickSort3way", unsortedArr);
+
+        Integer[] sortedArr = sorted.clone();
+        QuickSort.sort3way(sortedArr);
+        assertMethod("QuickSort3way", sortedArr);
+
+        Integer[] reverseArr = reverse.clone();
+        QuickSort.sort3way(reverseArr);
+        assertMethod("QuickSort3way", reverseArr);
+    }
 }

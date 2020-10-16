@@ -28,18 +28,32 @@ public class QuickSort {
 
     }
 
+    public static <T extends Comparable<T>> void sort3way(T[] unsorted) {
+        sort3way(unsorted, 0, unsorted.length - 1);
+    }
+
     //优化：三向切分快速排序，将相等的元素归出一类，避免参与递归
-//    public static <T extends Comparable<T>> void sort3way(T[] unsorted, int left, int right) {
-//        if (left >= right) {
-//            return;
-//        }
-//        int lt = left;
-//        int eq = left + 1;
-//        int gt = right;
-//        int pivot = left;
-//
-//
-//    }
+    public static <T extends Comparable<T>> void sort3way(T[] unsorted, int lo, int hi) {
+        if (lo >= hi) {
+            return;
+        }
+        int lt = lo;   //小于指针，之前小于基准值
+        int i = lo + 1;
+        int gt = hi;   //大于指针，之后大于基准值
+        T pivot = unsorted[lo];
+        while (i <= gt) {
+            int com = unsorted[i].compareTo(pivot);
+            if (com < 0) {
+                SortUtil.swap(unsorted, lt++, i++);
+            } else if (com > 0) {
+                SortUtil.swap(unsorted, i, gt--);
+            } else {
+                i++;
+            }
+        }
+        sort3way(unsorted, lo, lt - 1);
+        sort3way(unsorted, gt + 1, hi);
+    }
 
     public static <T extends Comparable<T>> int partition(T[] unsorted, int left, int right) {
         fixPivot(unsorted, left, right);
