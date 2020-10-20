@@ -164,7 +164,7 @@ public class TestSorts {
 
     @Test
     public void TestMergeSort_iteration_in_space() {
-        Integer[] unsortedArr = sorted.clone();
+        Integer[] unsortedArr = unsorted.clone();
         MergeSort.sort(unsortedArr, MergeSort.SPACE_TYPE.IN_PLACE, MergeSort.SORT_TYPE.INTERATION);
         assertMethod("MergeSort", unsortedArr);
 
@@ -179,7 +179,7 @@ public class TestSorts {
 
     @Test
     public void QuickSort() {
-        Integer[] unsortedArr = sorted.clone();
+        Integer[] unsortedArr = unsorted.clone();
         QuickSort.sort(unsortedArr);
         assertMethod("QuickSort", unsortedArr);
 
@@ -194,7 +194,7 @@ public class TestSorts {
 
     @Test
     public void Quick3way_Sort() {
-        Integer[] unsortedArr = sorted.clone();
+        Integer[] unsortedArr = unsorted.clone();
         QuickSort.sort3way(unsortedArr);
         assertMethod("QuickSort3way", unsortedArr);
 
@@ -205,5 +205,20 @@ public class TestSorts {
         Integer[] reverseArr = reverse.clone();
         QuickSort.sort3way(reverseArr);
         assertMethod("QuickSort3way", reverseArr);
+    }
+
+    @Test
+    public void HeapSort() {
+        Integer[] unsortedArr = unsorted.clone();
+        HeapSort.sort(unsortedArr);
+        assertMethod("HeapSort", unsortedArr);
+
+        Integer[] sortedArr = sorted.clone();
+        HeapSort.sort(sortedArr);
+        assertMethod("HeapSort", sortedArr);
+
+        Integer[] reverseArr = reverse.clone();
+        HeapSort.sort(reverseArr);
+        assertMethod("HeapSort", reverseArr);
     }
 }
