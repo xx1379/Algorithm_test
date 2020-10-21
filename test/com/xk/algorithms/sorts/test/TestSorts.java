@@ -221,4 +221,19 @@ public class TestSorts {
         HeapSort.sort(reverseArr);
         assertMethod("HeapSort", reverseArr);
     }
+
+    @Test
+    public void CountingSort() {
+        Integer[] unsortedArr = {-37, 20, 34, -22, 4, 5, 0, -5, -3, 14};
+        CountingSort.sort(unsortedArr);
+        assertMethod("CountingSort", unsortedArr);
+
+        Integer[] sortedArr = {-12, -8, -7, -1, 0, 13, 16, 18};
+        CountingSort.sort(sortedArr);
+        assertMethod("CountingSort", sortedArr);
+
+        Integer[] reverseArr = {22, 21, 20, 18, 17, 14, 10, 1};
+        CountingSort.sort(reverseArr);
+        assertMethod("CountingSort", reverseArr);
+    }
 }
