@@ -236,4 +236,19 @@ public class TestSorts {
         CountingSort.sort(reverseArr);
         assertMethod("CountingSort", reverseArr);
     }
+
+    @Test
+    public void RadixSort() {
+        Integer[] unsortedArr = {37, 20, 34, 22, 4, 5, 0, 5, 3, 14, 222, 434, 2323};
+        RadixSort.sort(unsortedArr);
+        assertMethod("RadixSort", unsortedArr);
+
+        Integer[] sortedArr = {0, 13, 16, 18, 58, 60, 101, 3333, 54542};
+        RadixSort.sort(sortedArr);
+        assertMethod("RadixSort", sortedArr);
+
+        Integer[] reverseArr = {22, 21, 20, 18, 17, 14, 10, 1};
+        RadixSort.sort(reverseArr);
+        assertMethod("RadixSort", reverseArr);
+    }
 }
