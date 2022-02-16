@@ -1,7 +1,6 @@
-package com.xk.algorithms.sorts.test;
+package com.xk.algorithms.sorts;
 
 
-import com.xk.algorithms.sorts.*;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
